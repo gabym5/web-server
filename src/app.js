@@ -11,6 +11,8 @@ const forecast = require('./utils/forecast')
 //levanto el server
 const app = express()
 
+const port = process.env.PORT || 3000
+
 // ***** Define patah for express config
 const publicDirectoryPath = path.join(__dirname, '../public')
 // cuando cambiamos el nombre de la carpeta views
@@ -134,6 +136,6 @@ app.get('*',(req,res) =>{
 })
 
 //levantar el server y el puerto
-app.listen(3000, () => {
-    console.log('Server is up on port 3000')
+app.listen(port, () => {
+    console.log('Server is up on port '+port)
 })
