@@ -12,7 +12,8 @@ const forecast = (latitude, longitude, callback) => {
         } else if (body.error) {
             callback('services error -->' + body.error.info),undefined
         } else {
-            callback(undefined,'The temperature of ' + body.location.name+ ' is ' + body.current.temperature + " degress, and the humidy is " + body.current.humidity + 'g/m2')
+            callback(undefined,'The temperature of ' + body.location.name+ ' is ' + body.current.temperature + ' degress, and the humidy is ' + 
+            body.current.humidity + '%, the feelslike is '+body.current.feelslike+' degrees out.' )
         }
     })
 
